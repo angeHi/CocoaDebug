@@ -67,10 +67,14 @@ public func swiftLog<T>(_ file: String = #file,
         }
     }
     
-    
-    
     Swift.print(message)
     _LogHelper.shared.handleLog(file: file, function: function, line: line, message: message, color: color)
 }
 
-
+public func log2CocoaDebug(_ file: String = #file,
+            _ function: String = #function,
+            _ line: Int = #line,
+            _ message: String,
+            _ color: UIColor) {
+    _LogHelper.shared.handleLog(file: file, function: function, line: line, message: message, color: color)
+}
